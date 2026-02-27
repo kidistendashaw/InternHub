@@ -10,8 +10,8 @@ class Student(Base):
     full_name = Column(String)
     year_of_study = Column(Integer)
     cgpa = Column(Float)
-    skills = Column(JSON)  # Can be null or empty
-    preferences = Column(JSON)  # Can be null or empty
+    skills = Column(JSON) 
+    preferences = Column(JSON)  
     resume_url = Column(String, nullable=True)
     is_active = Column(Boolean, default=True)
 
