@@ -1,8 +1,8 @@
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
-from models import Student, Internship, Match
-from base import SessionLocal
+from backend.models import Student, Internship
+from .base import SessionLocal
 
 def calculate_match_score(student: Student, internship: Internship) -> float:
     """

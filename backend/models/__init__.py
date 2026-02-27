@@ -4,4 +4,5 @@ from .internship import Internship
 from .application import Application
 from .skill import Skill
 
+
 __all__ = ['Student', 'Company', 'Internship', 'Application', 'Skill']
