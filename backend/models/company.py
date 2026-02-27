@@ -2,8 +2,8 @@ from sqlalchemy import Column, Integer, String, Boolean
 from sqlalchemy.orm import relationship
 from backend.base import Base
 
-class Company(Base):  # Keep as Company, not Employer
-    __tablename__ = "companies"  # Changed from "employers" to match class
+class Company(Base): 
+    __tablename__ = "companies" 
 
     id = Column(Integer, primary_key=True, index=True)
     email = Column(String, unique=True, index=True)
