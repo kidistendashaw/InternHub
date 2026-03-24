@@ -6,7 +6,7 @@ class Internship(Base):
     __tablename__ = "internships"
 
     id = Column(Integer, primary_key=True, index=True)
-    company_id = Column(Integer, ForeignKey("companies.id"))  # Changed from employer_id
+    company_id = Column(Integer, ForeignKey("companies.id")) 
     title = Column(String)
     description = Column(String)
     required_skills = Column(JSON, default=list)
