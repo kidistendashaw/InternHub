@@ -1,8 +1,8 @@
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
-from models import Student, Internship, Match
-from base import SessionLocal
+from backend.models import Student, Internship, Application
+from backend.base import SessionLocal
 
 def calculate_match_score(student: Student, internship: Internship) -> float:
     """
@@ -80,7 +80,7 @@ def save_match(student_id: int, internship_id: int, score: float):
     """
     db = SessionLocal()
     try:
-        match = Match(student_id=student_id, internship_id=internship_id, match_score=score)
+        match = Application(student_id=student_id, internship_id=internship_id, match_score=score)
         db.add(match)
         db.commit()
         db.refresh(match)
