@@ -3,4 +3,4 @@ const nextConfig = {
   cacheComponents: true,
 }
 
-module.exports = nextConfig
+export default nextConfig

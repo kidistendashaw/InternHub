@@ -1,18 +1,18 @@
 # Dependencies
 node_modules/
-/.pnp
+.pnp
 .pnp.js
 
 # Testing
-/coverage
+coverage/
 
 # Next.js
-/.next/
-/out/
+.next/
+out/
+build/
 
 # Production
-/build
-/dist
+dist/
 
 # Environment
 .env
