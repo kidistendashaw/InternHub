@@ -11,6 +11,12 @@ class StudentBase(BaseModel):
     skills: List[str] = []
     preferences: List[str] = []
 
+class StudentUpdate(BaseModel):
+    education: Optional[str] = None
+    experience: Optional[str] = None
+    skills: Optional[List[str]] = None
+    gpa: Optional[float] = None
+
 class StudentRead(StudentBase):
     id: int
     resume_url: Optional[str] = None
