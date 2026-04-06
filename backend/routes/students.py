@@ -26,17 +26,25 @@ async def upload_resume(file: UploadFile = File(...), db: Session = Depends(get_
         # Parse resume
         resume_data = process_resume_file(file_path)
         
-        # Try to parse year safely to int 
+        # Calculate year of study (e.g., if 2024 is the current graduation year, 
+        # and current year is 2024, they are likely in year 4 or 5)
         raw_year = resume_data.get("year_of_study", "")
-        safe_year = 1
+        safe_year = 1 # Default
+        
+        from datetime import datetime
+        current_year = datetime.now().year
+        
         if isinstance(raw_year, int):
             safe_year = raw_year
         elif raw_year:
-            # If it's a string like "2019-2023", maybe take the last 4 digits
-            year_match = re.search(r'(\d{4})$', str(raw_year))
+            # Extract the last 4 digits (likely graduation year)
+            year_match = re.search(r'(\d{4})', str(raw_year))
             if year_match:
-                # Estimate year of study based on current year vs grad year or just default 
-                pass 
+                grad_year = int(year_match.group(1))
+                # Simple estimate: 4-year degree (grad_year - 4 = start_year)
+                # Current year - start_year = year of study
+                estimated_year = 4 - (grad_year - current_year)
+                safe_year = max(1, min(5, estimated_year))
                 
         # Create or update student
         student = db.query(Student).filter(Student.email == resume_data["email"]).first()
@@ -55,14 +63,22 @@ async def upload_resume(file: UploadFile = File(...), db: Session = Depends(get_
             student.full_name = resume_data["full_name"]
             student.skills = resume_data["skills"]
             student.preferences = resume_data["preferences"]
+            student.year_of_study = safe_year # Update year as well
         
         db.commit()
         db.refresh(student)
         
-        return {"message": "Resume processed successfully", "student_id": student.id, "parsed_data": resume_data}
+        return {
+            "message": "Resume processed successfully", 
+            "student_id": student.id, 
+            "parsed_data": {**resume_data, "year_of_study": safe_year}
+        }
     
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        # Cleanup temp file on error
+        if os.path.exists(file_path):
+            os.remove(file_path)
+        raise HTTPException(status_code=500, detail=f"Parsing error: {str(e)}")
 
 @router.get("/{student_id}/matches/")
 def get_matches(student_id: int, threshold: float = 0.5):
