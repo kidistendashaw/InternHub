@@ -104,7 +104,7 @@ npm run deveieqwh
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## API Integration
+## API Integratio qwwerrrn
 
 The frontend communicates with a backend API for authentication, data management, and matching. The API client is configured in `lib/api.ts`.
 
