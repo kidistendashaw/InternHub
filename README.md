@@ -112,7 +112,7 @@ The frontend communicates with a backend API for authentication, data management
 
 **Authentication**
 - `POST /auth/register` - Create new account
-- `POST /auth/login` - User login
+- `POST /auth/login` - User login in login poage
 
 **Students**
 - `GET /students/:userId` - Get student profile
