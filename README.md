@@ -111,7 +111,7 @@ The frontend communicates with a backend API for authentication, data management
 ### API Endpoints Used anoterwrgt
 
 **Authentication**
-- `POST /auth/register` - Create new account
+- `POST /auth/register` - Create new account e31urey34qdqwe
 - `POST /auth/login` - User login in login poage
 
 **Students**
