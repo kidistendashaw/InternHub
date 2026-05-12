@@ -43,9 +43,11 @@ class InternshipUpdate(BaseModel):
 def list_internships(
     domain: Optional[str] = None,
     skill: Optional[str] = None,
+    page: int = 1,
+    limit: int = 10,
     db: Session = Depends(get_db),
 ):
-    """List active internships with optional domain/skill filters."""
+    """List active internships with optional domain/skill filters and pagination."""
     query = db.query(Internship).filter(Internship.is_active == True)
 
     if domain:
@@ -61,7 +63,18 @@ def list_internships(
             if any(skill_lower in s.lower() for s in (i.required_skills or []))
         ]
 
-    return [_serialize(i) for i in internships]
+    total = len(internships)
+    start = (page - 1) * limit
+    end = start + limit
+    page_items = internships[start:end]
+
+    return {
+        "total": total,
+        "page": page,
+        "limit": limit,
+        "pages": max(1, -(-total // limit)),  # ceiling division
+        "items": [_serialize(i) for i in page_items],
+    }
 
 
 @router.get("/{internship_id}")
