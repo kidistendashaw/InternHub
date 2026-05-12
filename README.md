@@ -99,20 +99,20 @@ NEXT_PUBLIC_API_URL=http://localhost:3001/api
 
 4. **Run the development server**
 ```bash
-npm run deveieqwh
+npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## API Integratio qwwerrrn
+## API Integration
 
 The frontend communicates with a backend API for authentication, data management, and matching. The API client is configured in `lib/api.ts`.
 
-### API Endpoints Used anoterwrgt
+### API Endpoints Used
 
 **Authentication**
-- `POST /auth/register` - Create new account e31urey34qdqwe
-- `POST /auth/login` - User login in login poageqweourqretq
+- `POST /auth/register` - Create new account
+- `POST /auth/login` - User login
 
 **Students**
 - `GET /students/:userId` - Get student profile
