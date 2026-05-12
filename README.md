@@ -99,7 +99,7 @@ NEXT_PUBLIC_API_URL=http://localhost:3001/api
 
 4. **Run the development server**
 ```bash
-npm run dev
+npm run deveieqwh
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
