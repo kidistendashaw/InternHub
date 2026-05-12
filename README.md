@@ -108,7 +108,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 The frontend communicates with a backend API for authentication, data management, and matching. The API client is configured in `lib/api.ts`.
 
-### API Endpoints Used
+### API Endpoints Used anoterwrgt
 
 **Authentication**
 - `POST /auth/register` - Create new account
