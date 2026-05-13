@@ -119,6 +119,10 @@ class APIClient {
   getStats() {
     return this.client.get('/stats')
   }
+
+  getStudentStats(userId: string) {
+    return this.client.get(`/stats/student/${userId}`)
+  }
 }
 
 export const apiClient = new APIClient()

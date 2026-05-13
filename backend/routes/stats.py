@@ -48,3 +48,30 @@ def get_stats(db: Session = Depends(get_db)):
         "avgMatchScore": avg_score,
         "topDomains": [{"domain": d, "count": c} for d, c in top_domains],
     }
+
+
+@router.get("/student/{student_id}")
+def get_student_stats(student_id: int, db: Session = Depends(get_db)):
+    """Return stats for a specific student's dashboard."""
+    apps = db.query(Application).filter(Application.student_id == student_id).all()
+
+    total = len(apps)
+    pending = sum(1 for a in apps if a.status == "pending")
+    accepted = sum(1 for a in apps if a.status == "accepted")
+    rejected = sum(1 for a in apps if a.status == "rejected")
+
+    # Best match score this student has
+    scores = [a.match_score for a in apps if a.match_score]
+    best_score = round(max(scores) * 100, 1) if scores else 0
+
+    # Count available internships (potential matches)
+    available = db.query(Internship).filter(Internship.is_active == True).count()
+
+    return {
+        "totalApplications": total,
+        "pending": pending,
+        "accepted": accepted,
+        "rejected": rejected,
+        "bestMatchScore": best_score,
+        "availableInternships": available,
+    }
