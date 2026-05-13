@@ -142,9 +142,17 @@ export default function MatchesPage() {
                     ))}
                   </div>
 
-                  <p className="text-foreground opacity-75 text-sm line-clamp-2">
+                  <p className="text-foreground opacity-75 text-sm line-clamp-2 mb-4">
                     {match.internship.description}
                   </p>
+
+                  <Link
+                    href={`/student/internships/${match.internship.id}`}
+                    onClick={(e) => e.stopPropagation()}
+                    className="text-primary hover:text-primary-dark text-sm font-semibold"
+                  >
+                    View details →
+                  </Link>
                 </div>
               ))}
             </div>
