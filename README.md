@@ -69,7 +69,7 @@ InternHub is a modern, full-stack web application that uses artificial intellige
 └── README.md
 ```
 
-## Getting Started
+## Getting Startedqwertyy
 
 ### Prerequisites
 - Node.js 18+ and npm/yarn/pnpm
