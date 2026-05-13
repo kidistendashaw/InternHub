@@ -114,6 +114,11 @@ class APIClient {
   updateApplicationStatus(applicationId: string, status: string) {
     return this.client.put(`/applications/${applicationId}`, { status })
   }
+
+  // Stats endpoint
+  getStats() {
+    return this.client.get('/stats')
+  }
 }
 
 export const apiClient = new APIClient()

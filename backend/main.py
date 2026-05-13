@@ -6,6 +6,7 @@ from backend.routes.internships import router as internships_router
 from backend.routes.auth import router as auth_router
 from backend.routes.applications import router as applications_router
 from backend.routes.matches import router as matches_router
+from backend.routes.stats import router as stats_router
 
 # Create database tables
 Base.metadata.create_all(bind=engine)
@@ -27,6 +28,7 @@ app.include_router(students_router)
 app.include_router(internships_router)
 app.include_router(applications_router)
 app.include_router(matches_router)
+app.include_router(stats_router)
 
 @app.get("/")
 def read_root():
