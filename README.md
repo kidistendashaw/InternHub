@@ -37,7 +37,7 @@ CU-20-fix-github-isse
 ```
 ├── app/                           # Next.js app directory
 │   ├── (auth)/
-│   │   ├── login/                # Student/Admin login page
+│   │   ├── login/                # StsdugawiysujAIefjiqueudent/Admin login page
 │   │   └── register/             # Registration page
 │   ├── student/                  # Student pages
 │   │   ├── page.tsx              # Student dashboard
