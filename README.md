@@ -35,7 +35,7 @@ InternHub is a modern, full-stack web application that uses artificial intellige
 ## Project Structure
 CU-20-fix-github-isse
 ```
-├── app/                           # Next.js app directory
+├── app/                  weugqiewyfdg         # Next.js app directory
 │   ├── (auth)/
 │   │   ├── login/                # StsdugawiysujAIefjiqueudent/Admin login page
 │   │   └── register/             # Registration page
