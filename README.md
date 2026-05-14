@@ -13,7 +13,7 @@ InternHub is a modern, full-stack web application that uses artificial intellige
 
 ### For Recruiters/Admins and adiewef
 - **Internship Management**: Create, edit, and manage internship positions
-- **Application Review**: Review student applications with detailed profile information
+- **Application Review**: Review student applications with detailed profile information CU-3-last
 - **Candidate Evaluation**: Accept or reject applications directly from the dashboard
 - **Analytics**: View application counts and status at a glance
 
