@@ -24,7 +24,7 @@ CU-1-two
 - **Next.js 16** - React framework with file-based routing
 - **TypeScript** - Type-safe JavaScript
 - **Tailwind CSS** - Utility-first CSS framework
-- **Axios** - HTTP client for API requests
+- **Axios** - HTTP clCU-20-fix-github-isseient for API requests
 
 ### Design
 - **Dark theme** - Modern, professional appearance
