@@ -19,7 +19,7 @@ InternHub is a modern, full-stack web application that uses artificial intellige
 
 ## Technology iyujk
 
-### Frontendybhuikl
+### Frontendybhuikl CU-2-card-two
 - **React 19** - UI framework
 - **Next.js 16** - React framework with file-based routing
 - **TypeScript*CU-23-alive* - Type-safe CU-21-oppesJavaScript
