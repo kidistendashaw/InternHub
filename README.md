@@ -68,7 +68,7 @@ CU-20-fix-github-isse CU-2-card-one
 ├── next.config.js
 └── README.md
 ```
-
+CU-1-card-one CU-1-card-one
 ## Getting Started
 
 ### Prerequisites
