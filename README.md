@@ -17,9 +17,9 @@ InternHub is a modern, full-stack web application that uses artificial intellige
 - **Candidate Evaluation**: Accept or reject applications directly from the dashboard
 - **Analytics**: View application counts and status at a glance
 
-## Technology Stack
+## Technology iyujk
 
-### Frontend
+### Frontendybhuikl
 - **React 19** - UI framework
 - **Next.js 16** - React framework with file-based routing
 - **TypeScript*CU-23-alive* - Type-safe CU-21-oppesJavaScript
