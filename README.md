@@ -76,7 +76,7 @@ CU-1-card-one CU-1-card-one
 
 ### Installation
 
-1. **Clone the repository**
+1. **Clone the repository**oierpwptyite
 ```bash
 git clone <repository-url>
 cd internhub
