@@ -15,10 +15,12 @@ const ThemeContext = createContext<ThemeContextValue>({
 })
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
+  // Always start with 'dark' on the server — avoids hydration mismatch
   const [theme, setTheme] = useState<Theme>('dark')
+  const [mounted, setMounted] = useState(false)
 
-  // On mount, read saved preference (or system preference)
   useEffect(() => {
+    setMounted(true)
     const saved = localStorage.getItem('theme') as Theme | null
     if (saved === 'light' || saved === 'dark') {
       apply(saved)
