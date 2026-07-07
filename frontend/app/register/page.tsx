@@ -43,15 +43,25 @@ export default function RegisterPage() {
     <div className="min-h-screen bg-background flex">
 
       {/* Left branding panel */}
-      <div className="hidden lg:flex flex-col justify-between w-[45%] border-r border-neutral-mid p-12"
+      <div className="hidden lg:flex flex-col justify-between w-[45%] border-r border-neutral-mid p-12 relative overflow-hidden"
            style={{ background: 'linear-gradient(160deg, rgb(var(--neutral-light)) 0%, rgb(var(--background)) 100%)' }}>
-        <Link href="/" className="flex items-center gap-2.5">
-          <div className="w-9 h-9 rounded-xl flex items-center justify-center text-white font-bold text-sm"
-               style={{ background: 'rgb(var(--primary))' }}>IH</div>
-          <span className="text-base font-bold text-foreground">InternHub</span>
-        </Link>
 
-        <div className="space-y-8">
+        {/* Background image overlay */}
+        <div className="absolute inset-0 opacity-5">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=900&fit=crop"
+               alt="" className="w-full h-full object-cover" />
+        </div>
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(28,22,42,0.3), rgba(15,12,22,0.8))' }} />
+
+        <div className="relative z-10">
+          <Link href="/" className="flex items-center gap-2.5">
+            <div className="w-9 h-9 rounded-xl flex items-center justify-center text-white font-bold text-sm"
+                 style={{ background: 'rgb(var(--primary))' }}>IH</div>
+            <span className="text-base font-bold text-foreground">InternHub</span>
+          </Link>
+        </div>
+
+        <div className="relative z-10 space-y-8">
           <div>
             <h2 className="text-2xl font-bold text-foreground mb-2 leading-snug">
               Start your internship journey today
@@ -61,7 +71,7 @@ export default function RegisterPage() {
             </p>
           </div>
 
-          <div className="space-y-5">
+          <div className="space-y-4">
             {[
               { icon: '🎯', title: 'Personalized matches', desc: 'Ranked by how well they fit your profile' },
               { icon: '📄', title: 'Resume auto-parsing', desc: 'Upload once, fill your profile instantly' },
@@ -69,7 +79,7 @@ export default function RegisterPage() {
             ].map(({ icon, title, desc }) => (
               <div key={title} className="flex items-start gap-3">
                 <div className="w-9 h-9 rounded-xl flex items-center justify-center text-base flex-shrink-0"
-                     style={{ background: 'rgba(139,92,246,0.12)' }}>
+                     style={{ background: 'rgba(139,92,246,0.15)' }}>
                   {icon}
                 </div>
                 <div>
@@ -81,12 +91,12 @@ export default function RegisterPage() {
           </div>
         </div>
 
-        <p className="text-foreground opacity-25 text-xs">© 2024 InternHub</p>
+        <p className="relative z-10 text-foreground opacity-25 text-xs">© 2024 InternHub</p>
       </div>
 
       {/* Right form panel */}
       <div className="flex-1 flex items-center justify-center px-6 py-12 overflow-y-auto">
-        <div className="w-full max-w-sm">
+        <div className="w-full max-w-sm animate-fade-up">
 
           {/* Mobile logo */}
           <Link href="/" className="flex items-center gap-2 mb-10 lg:hidden">
