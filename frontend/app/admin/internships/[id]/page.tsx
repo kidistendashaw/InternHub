@@ -1,10 +1,10 @@
 'use client'
 
-export const dynamic = 'force-dynamic'
-
 import { useState, useEffect } from 'react'
 import { useRouter, useParams } from 'next/navigation'
 import Layout from '@/components/layout'
+
+export const dynamic = 'force-dynamic'
 import { apiClient } from '@/lib/api'
 import { getStoredUser } from '@/lib/auth'
 
