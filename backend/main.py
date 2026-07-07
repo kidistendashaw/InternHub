@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+import os
 from backend.base import engine, Base
 from backend.routes.students import router as students_router
 from backend.routes.internships import router as internships_router
@@ -16,7 +17,11 @@ app = FastAPI(title="InternHub API", version="1.0.0")
 # CORS middleware — allow frontend to communicate with backend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://localhost:3001"],
+    allow_origins=[
+        "http://localhost:3000",
+        "http://localhost:3001",
+        os.getenv("FRONTEND_URL", ""),   # set this in Render env vars
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
