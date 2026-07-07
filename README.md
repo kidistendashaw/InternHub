@@ -10,7 +10,7 @@ InternHub is a modern, full-stack web application that uses artificial intellige
 - **Profile Management**: Upload your resume and manage your education, experience, and skills
 - **Application Tracking**: Apply to internships in seconds and track all your applications in one place
 - **Responsive Design**: Access InternHub from any device
-
+`
 ### For Recruiters/Admins and adiewef
 - **Internship Management**: Create, edit, and manage internship positions
 - **Application Review**: Review student applications with detailed profile information CU-3-last
