@@ -37,7 +37,7 @@ export default function RegisterPage() {
     }
   }
 
-  const inputClass = "w-full px-4 py-3 bg-neutral-light border border-neutral-mid rounded-xl text-foreground text-sm placeholder-foreground placeholder-opacity-30 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary focus:ring-opacity-15 transition-all"
+  const inputClass = "w-full px-4 py-3 bg-neutral-light border border-neutral-mid rounded-xl text-foreground text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary focus:ring-opacity-15 transition-all font-normal"
 
   return (
     <div className="min-h-screen bg-background flex">
